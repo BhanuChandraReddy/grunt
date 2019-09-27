@@ -33,9 +33,6 @@ module.exports = function(grunt) {
         },
         uglify: { // js minification
             build: {
-                options: {
-                    beautify: true
-                },
                 files: [{
                     src: 'build/app.js',
                     dest: 'build/app.min.js'
@@ -51,19 +48,6 @@ module.exports = function(grunt) {
                 files: ['scss/*.scss'],
                 tasks: ['css']
             }
-        },
-        eslint: {
-            options: {
-                configFile: 'eslint.json'
-            },
-            target: ['static/js/pages/*.js']
-        },
-        stylelint: {
-            options: {
-                configFile: '.stylelintrc.json',
-                failOnError: true,
-            },
-            files: ['scss/*.scss']
         }
     });
 
@@ -73,8 +57,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-eslint');
-    grunt.loadNpmTasks('grunt-stylelint');
 
     grunt.registerTask('concat-js', ['concat:js']);
     grunt.registerTask('concat-css', ['concat:css']);
@@ -82,9 +64,9 @@ module.exports = function(grunt) {
 
     //grunt.registerTask('sass-build', ['sass:build']);
 
-    grunt.registerTask('css', ['stylelint', 'sass', 'concat-css', 'css-min']);
-    grunt.registerTask('js', ['eslint', 'concat-js', 'uglify']);
+    grunt.registerTask('css', ['sass', 'concat-css', 'css-min']);
+    grunt.registerTask('js', ['concat-js', 'uglify']);
 
-    grunt.registerTask('default', ['css','js','watch']);
+    grunt.registerTask('default', ['watch']);
 
 }

@@ -1,0 +1,38 @@
+{
+  "rules": {
+      "at-rule-no-unknown": null,
+      "indentation": 4,
+      "at-rule-empty-line-before": [
+        "always", {
+          "ignoreAtRules": [ "import", "include", "content", "media" ]
+        }
+      ],
+      "length-zero-no-unit": [
+        true, {
+          "ignore": ["%", "px", "rem", "em"]
+        }
+      ],
+      "selector-pseudo-element-colon-notation": "single",
+      "rule-empty-line-before": "never-multi-line",
+      "block-closing-brace-empty-line-before": null,
+      "block-closing-brace-newline-after": null,
+      "block-closing-brace-newline-before": null,
+      "block-closing-brace-space-before": null,
+      "block-opening-brace-newline-after": null,
+      "block-opening-brace-space-after": null,
+      "block-opening-brace-space-before": null,
+      "declaration-block-semicolon-newline-after": null,
+      "declaration-block-semicolon-space-after": null,
+      "declaration-block-semicolon-space-before": null,
+      "declaration-block-trailing-semicolon": null,
+      "declaration-block-no-redundant-longhand-properties": [true,{
+        "ignoreShorthands": ["padding", "border", "flex","/flex-/"]
+      }],
+      "rule-empty-line-before": ["always-multi-line", 
+      {
+        "ignore": ["after-comment", "inside-block"]
+      }],
+      "block-opening-brace-space-before" : "always",
+      "value-list-comma-newline-after": "always-multi-line"
+  }
+}
